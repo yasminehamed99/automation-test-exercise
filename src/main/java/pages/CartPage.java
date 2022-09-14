@@ -24,5 +24,9 @@ public class CartPage extends BasePage{
         return get_list_of_elements(itemsTotalPrice).get(itemPosition).getText();
 
     }
+    public String  getItemTotalPriceAmount(int position){
+        String productTotalPrice = String.valueOf(Integer.parseInt(getItemPrice(position).replace("Rs. ","")) * Integer.parseInt(getItemQuantity(position)));
+        return productTotalPrice;
+    }
 
 }

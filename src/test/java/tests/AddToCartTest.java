@@ -7,8 +7,8 @@ import pages.AllProductsPage;
 import pages.CartPage;
 import pages.LoginPage;
 import pages.NavigationBarPage;
-import static utilis.LoadData.email;
-import static utilis.LoadData.password;
+
+import static FilesManager.ReaderFromFiles.getPropertyByKey;
 
 
 public class AddToCartTest extends BaseTest{
@@ -20,7 +20,7 @@ SoftAssert softAssert=new SoftAssert();
 
     navigationBarPage = new NavigationBarPage(driver);
     LoginPage loginPage = navigationBarPage.clickOnLogin();
-    loginPage.login(email, password);
+    loginPage.login( getPropertyByKey(propertyFileName , "USER_EMAIL"),getPropertyByKey(propertyFileName,"USER_PASSWORD"));
 
 }
 @Test
@@ -44,14 +44,9 @@ SoftAssert softAssert=new SoftAssert();
     softAssert.assertFalse(cartPage.getItemTotalPrice(0).isEmpty(),"the product total price is empty");
     softAssert.assertFalse(cartPage.getItemTotalPrice(1).isEmpty(),"the product total price is empty");
     //check the total price is true
-    String product1TotalPrice = String.valueOf(Integer.parseInt(cartPage.getItemPrice(0).replace("Rs. ","")) * Integer.parseInt(cartPage.getItemQuantity(0)));
-    softAssert.assertEquals(cartPage.getItemTotalPrice(0),"Rs. "+product1TotalPrice);
-    String product2TotalPrice = String.valueOf(Integer.parseInt(cartPage.getItemPrice(0).replace("Rs. ","")) * Integer.parseInt(cartPage.getItemQuantity(0)));
-    softAssert.assertEquals(cartPage.getItemTotalPrice(0),"Rs. "+product2TotalPrice);
+    softAssert.assertEquals(cartPage.getItemTotalPrice(0),"Rs. "+cartPage.getItemTotalPriceAmount(0));
+    softAssert.assertEquals(cartPage.getItemTotalPrice(1),"Rs. "+cartPage.getItemTotalPriceAmount(1));
     softAssert.assertAll();
-
-
-
 
 }
 }

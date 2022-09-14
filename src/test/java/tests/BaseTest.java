@@ -1,5 +1,5 @@
 package tests;
-import filesReader.FilesReader;
+
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
@@ -16,22 +16,21 @@ import java.io.File;
 import java.io.IOException;
 
 
-import static utilis.LoadData.loadData;
-import static utilis.LoadData.url;
+import static FilesManager.ReaderFromFiles.getPropertyByKey;
+
 
 public class BaseTest {
+    public static String propertyFileName =  "config.properties" ;
     WebDriver driver;
-    @BeforeTest
-    public void getPropertiesData(){
-        loadData();
-    }
+
+
 
     @BeforeMethod
     public void setUp(){
         WebDriverManager.chromedriver().setup();
         driver=new ChromeDriver();
         driver.manage().window().maximize();
-        driver.get(url);
+        driver.get(getPropertyByKey("config.properties", "WEB_URL"));
 
     }
     @AfterMethod
