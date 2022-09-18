@@ -9,6 +9,6 @@ public class ProductPage extends BasePage{
         super(driver);
     }
     public String getSearchedProductText(){
-       return GetElementText(searchedProductText);
+       return getElementText(searchedProductText);
     }
 }

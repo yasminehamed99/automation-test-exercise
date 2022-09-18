@@ -6,7 +6,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
@@ -23,35 +22,32 @@ public class BasePage {
         actions=new Actions(driver);
 
     }
-    public WebElement WaitElementToBeLocated(By loactor){
-        wait.until(ExpectedConditions.visibilityOfElementLocated(loactor));
-        wait.until(ExpectedConditions.elementToBeClickable(loactor));
-        return driver.findElement(loactor);
+    public WebElement waitElementToBeLocated(By locator){
+        wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+        wait.until(ExpectedConditions.elementToBeClickable(locator));
+        return driver.findElement(locator);
 
     }
-    public List<WebElement> get_list_of_elements(By loactor){
+    public List<WebElement> get_list_of_elements(By locator){
+        wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+        wait.until(ExpectedConditions.elementToBeClickable(locator));
 
-
-        return driver.findElements(loactor);
+        return driver.findElements(locator);
 
 
     }
-    public void ElementClick(By locator){
-        WaitElementToBeLocated(locator).click();
+    public void elementClick(By locator){
+        waitElementToBeLocated(locator).click();
     }
-    public void TypeOnFields(By locator,String text){
-        WaitElementToBeLocated(locator).sendKeys(text);
+    public void typeOnFields(By locator, String text){
+        waitElementToBeLocated(locator).sendKeys(text);
     }
-    public Select SelectElement(By locator){
-        Select select=new Select(WaitElementToBeLocated(locator));
-        return select;
-    }
-    public String GetElementText(By locator){
-        return WaitElementToBeLocated(locator).getText();
+    public String getElementText(By locator){
+        return waitElementToBeLocated(locator).getText();
     }
 
     public String get_element_color(By locator){
-       String color= WaitElementToBeLocated(locator).getCssValue("color");
+       String color= waitElementToBeLocated(locator).getCssValue("color");
        return color;
     }
     public void performMouseHover(WebElement element){

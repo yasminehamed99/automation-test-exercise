@@ -8,7 +8,7 @@ import pages.CartPage;
 import pages.LoginPage;
 import pages.NavigationBarPage;
 
-import static FilesManager.ReaderFromFiles.getPropertyByKey;
+import static filesManager.ReaderFromFiles.getPropertyByKey;
 
 
 public class AddToCartTest extends BaseTest{

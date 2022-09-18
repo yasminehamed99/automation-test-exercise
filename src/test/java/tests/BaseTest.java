@@ -9,14 +9,12 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Test;
 
 import java.io.File;
 import java.io.IOException;
 
 
-import static FilesManager.ReaderFromFiles.getPropertyByKey;
+import static filesManager.ReaderFromFiles.getPropertyByKey;
 
 
 public class BaseTest {

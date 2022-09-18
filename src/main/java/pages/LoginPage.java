@@ -11,9 +11,9 @@ public class LoginPage extends BasePage{
         super(driver);
     }
     public void login(String email,String password){
-        TypeOnFields(emailField,email);
-        TypeOnFields(passwordField,password);
-        ElementClick(loginBtn);
+        typeOnFields(emailField,email);
+        typeOnFields(passwordField,password);
+        elementClick(loginBtn);
 
     }
 }

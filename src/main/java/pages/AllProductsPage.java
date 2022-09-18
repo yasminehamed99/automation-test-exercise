@@ -20,13 +20,13 @@ public class AllProductsPage extends BasePage{
         super(driver);
     }
     public ProductPage searchForProduct(String productName){
-        TypeOnFields(searchProductField,productName);
-        ElementClick(searchButton);
+        typeOnFields(searchProductField,productName);
+        elementClick(searchButton);
         return new ProductPage(driver);
 
     }
     public String getAllProductText(){
-       return GetElementText(allProductText);
+       return getElementText(allProductText);
     }
 public List<WebElement> get_all_products(){
     return get_list_of_elements(allProductElements);
@@ -44,11 +44,28 @@ performMouseHover(get_all_products().get(position));
 clickUsingJavaScript(get_list_of_elements(AddToCartButtons).get(position));
 }
 public void continueShopping(){
-        clickUsingJavaScript(WaitElementToBeLocated(continueShopping));
+        clickUsingJavaScript(waitElementToBeLocated(continueShopping));
 }
 public CartPage viewCart(){
 
-    clickUsingJavaScript(WaitElementToBeLocated(viewCartButton));
+    clickUsingJavaScript(waitElementToBeLocated(viewCartButton));
     return new CartPage(driver);
+}
+public boolean allSearchResultIsVisible(){
+    for(int i=0;i<get_all_products().size();i++){
+        if(get_all_products().get(i).isDisplayed()==false)
+           return false;
+    }
+    return true;
+}
+public boolean allProductsRelatedToSearchIsShown(List<String>allProducts,List<String>searchResultProducts,String productName){
+    for(int i=0;i< allProducts.size();i++){
+        if(allProducts.get(i).contains(productName)==true&&searchResultProducts.contains(allProducts.get(i))==false)
+            return false;
+        else
+            return true;
+
+    }
+    return true;
 }
 }

@@ -1,4 +1,4 @@
-package FilesManager;
+package filesManager;
 
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;

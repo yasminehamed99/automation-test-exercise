@@ -12,13 +12,13 @@ public class NavigationBarPage extends BasePage {
         super(driver);
     }
 public LoginPage clickOnLogin(){
-        ElementClick(loginButton);
+        elementClick(loginButton);
         return new LoginPage(driver);
 
 
 }
 public AllProductsPage goToProductsPage(){
-        ElementClick(productsButton);
+        elementClick(productsButton);
         return new AllProductsPage(driver);
 }
 public String HomeButtonColor(){

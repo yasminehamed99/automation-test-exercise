@@ -11,8 +11,8 @@ import pages.ProductPage;
 
 import java.util.List;
 
-import static FilesManager.ReaderFromFiles.getJsonValueByKey;
-import static FilesManager.ReaderFromFiles.getPropertyByKey;
+import static filesManager.ReaderFromFiles.getJsonValueByKey;
+import static filesManager.ReaderFromFiles.getPropertyByKey;
 
 public class SearchProductTest extends BaseTest{
     NavigationBarPage navigationBarPage;
@@ -44,21 +44,9 @@ public class SearchProductTest extends BaseTest{
         softAssert.assertEquals(productPage.getSearchedProductText(),"SEARCHED PRODUCTS","The Searched Products Text Isn't Visible");
         List<String>searchResultProducts=allProductsPage.getProductsName();
         //verify that all product is visible
-        boolean productsIsVisible=true;
-        for(int i=0;i<allProductsPage.get_all_products().size();i++){
-            if(allProductsPage.get_all_products().get(i).isDisplayed()==false)
-                productsIsVisible=false;
-        }
-        softAssert.assertTrue(productsIsVisible,"there is an invisible product related to search");
+        softAssert.assertTrue(allProductsPage.allSearchResultIsVisible(),"there is an invisible product related to search");
         //verify that all products related to search is shown in search
-        for(int i=0;i< allProducts.size();i++){
-
-            if(allProducts.get(i).contains(productName)&&!searchResultProducts.contains(allProducts.get(i)))
-                softAssert.assertTrue(false,"the element"+allProducts.get(i)+" is not in search result");
-            else
-                softAssert.assertTrue(true,"correct");
-
-        }
+        softAssert.assertTrue(allProductsPage.allProductsRelatedToSearchIsShown(allProducts,searchResultProducts,productName),"there is an element related to search and isn't shown");
 
         softAssert.assertAll();
 
