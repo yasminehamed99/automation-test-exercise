@@ -4,11 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8f21c0f0-746a-4547-b28f-446430650591" name="Changes" comment="initial commit">
+    <list default="true" id="8f21c0f0-746a-4547-b28f-446430650591" name="Changes" comment="updated">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/FilesManager/ReaderFromFiles.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/filesManager/ReaderFromFiles.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pages/AllProductsPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/AllProductsPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pages/BasePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/BasePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pages/CartPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/CartPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pages/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/HomePage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pages/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/LoginPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pages/NavigationBarPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/NavigationBarPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pages/ProductPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/ProductPage.java" afterDir="false" />
@@ -41,24 +42,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;E:/MYFILES/pom-project-round1-master&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "last_opened_file_path": "E:/MYFILES/more-slelenium-actions",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="pages" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.AddToCartTest.add_to_cart_test">
+  <component name="RunManager" selected="TestNG.AddToCartTest">
     <configuration name="AddToCartTest" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="automationExercise" />
       <extension name="coverage">
@@ -149,9 +150,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.AddToCartTest" />
         <item itemvalue="TestNG.AddToCartTest.add_to_cart_test" />
         <item itemvalue="TestNG.SearchProductTest" />
-        <item itemvalue="TestNG.AddToCartTest" />
         <item itemvalue="TestNG.BaseTest.t" />
         <item itemvalue="TestNG.SearchProductTest.search_product_test" />
       </list>

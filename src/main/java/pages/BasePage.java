@@ -54,6 +54,10 @@ public class BasePage {
         actions.moveToElement(element).build().perform();
 
     }
+    public void scrollVertically(int y_dim){
+        actions.scrollByAmount(0,y_dim).perform();
+
+    }
     public void clickUsingJavaScript(WebElement element){
         JavascriptExecutor executor=(JavascriptExecutor)driver;
         executor.executeScript("arguments[0].click();", element);
